@@ -1,9 +1,8 @@
 @extends('layouts.base')
 
 @section('body')
-    @yield('content')
-    
-    @isset($slot)
-        {{ $slot }}
-    @endisset
+    <div class="container p-6 mx-auto grid">
+        
+        @yield('content')
+    </div>
 @endsection

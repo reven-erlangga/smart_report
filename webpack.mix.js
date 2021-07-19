@@ -15,7 +15,11 @@ require("laravel-mix-tailwind");
 
 mix.js("resources/js/app.js", "public/js/app.js")
     .sass("resources/sass/app.scss", "public/css/app.css")
+    .webpackConfig(require('./webpack.config'))
     .tailwind("./tailwind.config.js")
+    .postCss('resources/css/app.css', 'public/css', [
+        require('tailwindcss'),
+    ])
     .sourceMaps();
 
 if (mix.inProduction()) {
